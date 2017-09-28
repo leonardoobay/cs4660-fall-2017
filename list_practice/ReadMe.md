@@ -37,8 +37,13 @@ that variable has an integer value. So, we can assign the value of 1 to i
 and then print “daily_high_temps[i]” and get 80.
 
 daily_high_temps = [83, 80, 73, 75, 79, 83, 86]
+
 i = 1
+
+
 print (daily_high_temps[i])
+
+
 OUTPUT:
 80
 
