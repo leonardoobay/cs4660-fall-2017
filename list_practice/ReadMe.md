@@ -24,6 +24,7 @@ In the temperature list, printing out the fifth value, â€œdaily_high_temps [4],â
 would print out 79.
 
 (index_numbers---->[0,  1,  2,  3,  4,  5,  6  ]
+
 daily_high_temps = [83, 80, 73, 75, 79, 83, 86]
 
 print(daily_high_temps[4])
