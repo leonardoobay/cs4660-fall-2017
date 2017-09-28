@@ -1,2 +1,2 @@
-Traversal algorithms
+Traversal algorithms practice
 
