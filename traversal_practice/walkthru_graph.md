@@ -1,5 +1,5 @@
 
-[[https://github.com/csula-students/cs4660-fall-2017-cs4660csula/blob/master/traversal_practice/images/dungeons_walkthrough.png|alt=code]]
+[https://github.com/csula-students/cs4660-fall-2017-cs4660csula/blob/master/traversal_practice/images/dungeons_walkthrough.png|alt=code]
 
 [[https://github.com/username/repository/blob/master/img/octocat.png|alt=octocat]]
 
