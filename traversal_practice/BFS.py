@@ -83,22 +83,47 @@ previous_path.append(goal)
 return previous_path
 
 def BFS(nodelist, start, goal):
-to_visit = queue()
-nodelist[start].setSeen()
-to_visit.enqueue(start)
-found = False
-while (not found) and (not to_visit.isEmpty()):
-current = to_visit.dequeue()
-neighbors = nodelist[current].getNeighbors()
-for neighbor in neighbors:
-if nodelist[neighbor].isUnseen():
-nodelist[neighbor].setSeen()
-nodelist[neighbor].discover(current)
-if neighbor == goal:
-found = True
-else:
-to_visit.enqueue(neighbor)
-return retrievePath(noswliar, start, goal)
+    to_visit = queue()
+    nodelist[start].setSeen()
+    to_visit.enqueue(start)
+    found = False
+    while (not found) and (not to_visit.isEmpty()):
+    current = to_visit.dequeue()
+    neighbors = nodelist[current].getNeighbors()
+    for neighbor in neighbors:
+    if nodelist[neighbor].isUnseen():
+    nodelist[neighbor].setSeen()
+    nodelist[neighbor].discover(current)
+    if neighbor == goal:
+    found = True
+    else:
+    to_visit.enqueue(neighbor)
+    return retrievePath(noswliar, start, goal)
+
+
+####################################
+
+# Adding the queue data structure
+
+class queue:
+
+    def __init__(self):
+        self._queue = []
+
+    def enqueue(self, x):
+        self._queue.append(x)
+
+    def dequeue(self):
+        return self._queue.pop(0)
+
+    def isEmpty(self):
+        return len(self._queue) == 0
+
+    def BFS(nodelist, start, goal):
+        to_visit = queue()
+        nodelist[start].setSeen()
+        to_visit.enqueue(start)
+
 
 
 ####################################
