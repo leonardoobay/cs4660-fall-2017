@@ -4,4 +4,9 @@ Books used:
 
 How to Program Computer Science Concepts and Python Exercises
 
+
 Python Algorithms Mastering Basic Algorithms in the Python Language
+
+
+For path_finding_graphs:
+https://www.python.org/doc/essays/graphs/
