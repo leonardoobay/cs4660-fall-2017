@@ -5,10 +5,25 @@ Data Structures and Algorithms in Python
 
 Goodrich
 
+The self Identifier
+In Python, the self identifier plays a key role. In the context of the CreditCard
+class, there can presumably be many different CreditCard instances, and each must
+maintain its own balance, its own credit limit, and so on. Therefore, each instance
+stores its own instance variables to reflect its current state.
+Syntactically, self identifies the instance upon which a method is invoked. For
+example, assume that a user of our class has a variable, my card, that identifies
+an instance of the CreditCard class. When the user calls my card.get balance( ),
+identifier self, within the definition of the get balance method, refers to the card
+known as my card by the caller. The expression, self. balance refers to an instance
+variable, named balance, stored as part of that particular credit card’s state.
+
+
+
+
 """
 
 class CreditCard:
-”””A consumer credit card.”””
+"""A consumer credit card.”””
 
 def init (self, customer, bank, acnt, limit):
 ”””Create a new credit card instance.
