@@ -1,3 +1,23 @@
+#######################################################################
+######################################################################
+# ------ Source: https://guidebookstgc.snagfilms.com/9151_ComputerScience.pdf
+# ------ Page 248 Chapter 23 -----
+# ------
+########################################################################
+########################################################################
+
+######################################################################################################
+# Disclaimer: Social network should be treated neutrally as the phrase 'social network' itself is ambiguous.
+# Social networks can comprise criminal networks, business networks, government agency networks, or terrorists networks.
+# The point is that we are applying the "social network" construct to organize data to look for relationships within the data.
+# As such, with social networks, we have data representations in the form of graphs wherein the relationships 
+# within the data will have nodes, and edges.
+# Further, the social network does not have to be a group of people that are related, or that know each other. The data
+# also does not have to be people. 
+# The social network concepts is used with 'friends' because this is very easy to understand, and very easy to see how graphs
+# apply to social networks. 
+##########################################################################################################
+
 """Let’s imagine that we have a social network, where people form the
 nodes, and we have an edge connecting people if they’re friends with
 each other. If we want to know the shortest way to connect two people
