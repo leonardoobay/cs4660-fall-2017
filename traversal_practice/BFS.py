@@ -67,3 +67,32 @@ def discover(self, n):
 self._discoveredby = n
 def discovered(self):
 return self._discoveredby
+
+
+####################################
+people = [] # A list
+person = node('John')
+people.append(person)
+person = node('Joe')
+people.append(person)
+person = node('Sue')
+people.append(person)
+person = node('Fred')
+people.append(person)
+person = node('Kathy')
+people.append(person)
+makeFriends('John', 'Joe')
+makeFriends('John', 'Sue')
+makeFriends('Joe', 'Sue')
+makeFriends('Sue', 'Fred')
+makeFriends('Fred', 'Kathy')
+pathlist = BFS(people, 0, 4)
+for index in pathlist:
+print(people[index].getName())
+
+
+OUTPUT:
+John
+Sue
+Fred
+Kathy
