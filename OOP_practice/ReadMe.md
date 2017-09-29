@@ -1,3 +1,8 @@
 Object-Oriented Programming Practice
 
-source: https://guidebookstgc.snagfilms.com/9151_ComputerScience.pdf
+sources: 
+
+https://guidebookstgc.snagfilms.com/9151_ComputerScience.pdf
+
+
+Goodrich, Data Structures and Algorithms in Python
