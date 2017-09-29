@@ -1,3 +1,7 @@
 Graph Pratice
 
-Source book: https://guidebookstgc.snagfilms.com/9151_ComputerScience.pdf
+Source books: 
+
+https://guidebookstgc.snagfilms.com/9151_ComputerScience.pdf
+
+Data Structures and Algorithms in Python, Goodrich
