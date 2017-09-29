@@ -69,6 +69,21 @@ def discovered(self):
 return self._discoveredby
 
 
+###################################
+def retrievePath(nodelist, start, goal):
+#Return the path from start to goal
+if start == goal:
+path = []
+path.append(start)
+return path
+else:
+previous = nodelist[goal].discovered()
+previous_path = retrievePath(nodelist, start, previous)
+previous_path.append(goal)
+return previous_path
+
+
+
 ####################################
 people = [] # A list
 person = node('John')
