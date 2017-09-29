@@ -1,3 +1,12 @@
+"""
+Page 73 
+
+Data Structures and Algorithms in Python
+
+Goodrich
+
+"""
+
 class CreditCard:
 ”””A consumer credit card.”””
 
