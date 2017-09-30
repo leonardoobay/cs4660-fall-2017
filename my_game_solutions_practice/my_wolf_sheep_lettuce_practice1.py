@@ -17,7 +17,7 @@ We have a simple boat that will never posses the AI to operate itself.
 
 We need to move all three Strings from A to B.
 
-However, we can't lost any elements in the process.
+However, we can't lose any elements in the process.
 
 As expected, goat eats lettuce.
 Wolf eats goat.
