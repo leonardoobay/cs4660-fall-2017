@@ -33,3 +33,10 @@ Good sources for python learning:
 
 [5] Graph and its operations using Python 
     https://www.youtube.com/watch?v=cKhVSXEWo_s&t=1875s
+    
+    
+    
+    
+    
+[6] Python: 2 Ways to Represent Graphs
+     https://www.youtube.com/watch?v=HDUzBEG1GlA&t=14s
