@@ -29,7 +29,10 @@ What this means is that the wolf creates space on land.
 This is useful since we can only moves objects one at a time.
 We can move objects from A to B, and from B to A as needed.
 
+Play the game here: http://jeux.lulu.pagesperso-orange.fr/html/anglais/loupChe/loupChe1.htm#
 
+Disclaimer: I type up the solution in a few minutes, so it won't be the best looking solution.
+            It is valid, however.
 
 """
 ######################################
