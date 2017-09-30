@@ -10,3 +10,8 @@ Python Algorithms Mastering Basic Algorithms in the Python Language
 
 For path_finding_graphs:
 https://www.python.org/doc/essays/graphs/
+
+
+
+Algorithms: Graph Search, DFS and BFS
+https://www.youtube.com/watch?v=zaBhtODEL0w (Very helpful tutorial.)
