@@ -1,7 +1,7 @@
 ############################
-Page 233
-Data Structures and Algorithms in Python
-Goodrich
+#Page 233
+#Data Structures and Algorithms in Python
+#Goodrich
 ############################
 
 
