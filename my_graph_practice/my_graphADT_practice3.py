@@ -3,11 +3,15 @@
 A simple Python graph class, demonstrating the essential 
 facts and functionalities of graphs.
 source: https://www.python-course.eu/graphs_python.php
+
+
+More on dictionaries here: https://www.python-course.eu/dictionaries.php
+
 """
 ############################################
 
 class Graph(object):
-
+    
     def __init__(self, graph_dict=None):
         """ initializes a graph object 
             If no dictionary or None is given, 
@@ -24,7 +28,8 @@ class Graph(object):
     def edges(self):
         """ returns the edges of a graph """
         return self.__generate_edges()
-
+    
+    # Adding a vertex, for homework1
     def add_vertex(self, vertex):
         """ If the vertex "vertex" is not in 
             self.__graph_dict, a key "vertex" with an empty
@@ -33,7 +38,8 @@ class Graph(object):
         """
         if vertex not in self.__graph_dict:
             self.__graph_dict[vertex] = []
-
+    
+    #Adding an edge, for homework1
     def add_edge(self, edge):
         """ assumes that edge is of type set, tuple or list; 
             between two vertices can be multiple edges! 
