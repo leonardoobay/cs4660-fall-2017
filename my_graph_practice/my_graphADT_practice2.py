@@ -44,7 +44,7 @@ def init (self, u, v, x):
   self. element = x
 
 def endpoints(self):
-"""Return (u,v) tuple for vertices u and v.""
+"""Return (u,v) tuple for vertices u and v."""
   return (self. origin, self. destination)
 
 def opposite(self, v):
