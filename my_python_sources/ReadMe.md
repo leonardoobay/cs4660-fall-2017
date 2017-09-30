@@ -1,18 +1,27 @@
 Good sources for python learning:
 
 
-Problem Solving with Algorithms and Data Structures using Python
-http://interactivepython.org/runestone/static/pythonds/index.html
-
-
-
-
-Representing graphs
-https://www.khanacademy.org/computing/computer-science/algorithms/graph-representation/a/representing-graphs
+[1] Problem Solving with Algorithms and Data Structures using Python
+    http://interactivepython.org/runestone/static/pythonds/index.html
 
 
 
 
 
-Graphs and Graph Algorithms
-http://interactivepython.org/runestone/static/pythonds/Graphs/toctree.html
+[2] Representing graphs
+    https://www.khanacademy.org/computing/computer-science/algorithms/graph-representation/a/representing-graphs
+
+
+
+
+
+
+
+[3] Graphs and Graph Algorithms
+    http://interactivepython.org/runestone/static/pythonds/Graphs/toctree.html
+
+
+
+
+[4] Python Course
+    https://www.python-course.eu/graphs_python.php
