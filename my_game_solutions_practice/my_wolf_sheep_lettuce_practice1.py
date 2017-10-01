@@ -53,7 +53,7 @@ piece_of_land_B = B
 
 
 Land_A houses a wolf, a goat, and lettuce.
-Land_B is empty and ready to house the tree elements.
+Land_B is empty and ready to house the three elements.
 
 
 First move:
