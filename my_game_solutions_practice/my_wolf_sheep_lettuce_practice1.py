@@ -70,11 +70,11 @@ First move:
     If goat eats lettuce, AND goat and lettuce 
     are on the same landmass, put goat or lettuce in boat.
    
-    However, if wof eats goat, and goat and wolf 
+    However, if wolf eats goat, and goat and wolf 
     are on the same landmass, put goat or wolf in boat OR
     put wolf in the same landmass as lettuce.
     
-    In this situation, we put the lettuce back in the boat, and love the lettuce from B to A.
+    In this situation, we put the lettuce back in the boat, and move the lettuce from B to A.
     Leave the goat in landmass B.
     Return to landmass A with the lettuce.
     
