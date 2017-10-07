@@ -1,3 +1,4 @@
+# from graph import Node, Edge
 """
 utils package is for some quick utility methods
 
@@ -24,7 +25,7 @@ class Tile(object):
         return not self.__eq__(other)
 
     def __hash__(self):
-        return hash(self.x + self.y + self.symbol)
+        return hash(str(self.x) +"," + str(self.y) + self.symbol)
 
 
 
@@ -36,7 +37,47 @@ def parse_grid_file(graph, file_path):
     Returns graph object
     """
     # TODO: read the filepaht line by line to construct nodes & edges
+    def check_symbol(cnode, symbol, x, y):
+      if symbol != "##":    
+        node = Node(Tile(x/2, y, tsymbol))
+        edge = Edge(cnode, node, 1)
+        graph.add_node(node)
+        graph.add_edge(edge)
 
+
+    f = open(file_path, 'r')
+    lines = f.read().split('\r\n')[1:-2]
+    lines = [l[1:-1] for l in lines]
+    f.close()
+
+    rows = len(lines)
+    cols = len(lines[0])
+    
+    for row in range(rows):
+        for col in range(0, cols, 2):
+          symbol = lines[row][col:col+2]
+          if symbol == "##" :
+            continue
+          # if symbol[0] == "@":
+          #   import pdb; pdb.set_trace()
+          tile = Tile(col/2, row, symbol)
+          cur_node = Node(tile)
+          graph.add_node(cur_node)
+
+          # Look for left, right, top, bottom for edges
+          if row - 1 >= 0:
+            tsymbol = lines[row-1][col:col+2]
+            check_symbol(cur_node, tsymbol, col, row-1)
+          if row + 1 < rows:
+            tsymbol = lines[row+1][col:col+2]
+            check_symbol(cur_node, tsymbol, col, row+1)
+          if col - 2 >= 0:
+            tsymbol = lines[row][col-2:col]
+            check_symbol(cur_node, tsymbol, col-2, row)
+          if col + 2 < cols :
+            tsymbol = lines[row][col+2:col+4]
+            check_symbol(cur_node, tsymbol, col+2, row)
+    
     # TODO: for each node/edge above, add it to graph
 
     return graph
@@ -47,4 +88,23 @@ def convert_edge_to_grid_actions(edges):
 
     e.g. Edge(Node(Tile(1, 2), Tile(2, 2), 1)) => "S"
     """
-    return ""
+    path = ""
+    
+    print("+++")
+    print(len(edges))
+    print(edges)
+    for edge in edges:
+      print(edge)
+      
+      tile1 = edge.from_node.data
+      tile2 = edge.to_node.data
+
+      if tile2.y > tile1.y:
+        path += "S"
+      elif tile2.x > tile1.x:
+        path += "E"
+      elif tile2.y < tile1.y:
+        path += "N"
+      elif tile2.x < tile1.x:
+        path += "W"
+    return path
