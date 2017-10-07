@@ -52,7 +52,7 @@ def parse_grid_file(graph, file_path):
     f.close()
 
     rows = len(lines)
-    cols = len(lines[]) #change here
+    cols = len(lines[0]) #change here
     
     for row in range(rows):
         for col in range(0, cols, 2):
