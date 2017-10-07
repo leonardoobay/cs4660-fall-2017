@@ -213,7 +213,7 @@ class TestAStar(unittest.TestCase):
         self.graph_2s = list(map(construct_grid_graph(grid_2_path), self.graph_2s))
         self.graph_3s = list(map(construct_grid_graph(grid_3_path), self.graph_3s))
         self.graph_4 = utils.parse_grid_file(graph.AdjacencyList(), grid_4_path)
-        self.graph_4 = utils.parse_grid_file(graph.AdjacencyList(), grid_5_path)
+        self.graph_5 = utils.parse_grid_file(graph.AdjacencyList(), grid_5_path)
 
     def test_a_star_1(self):
         start_time = time.time()
@@ -268,13 +268,13 @@ class TestAStar(unittest.TestCase):
         )
         self.assertTrue(string_equal_without_order(path, expected_path))
         print("A_star_4: %.6f seconds" % (time.time() - start_time))
-    # this method below had a typo
+
     def test_a_star_5(self):
         start_time = time.time()
         expected_path = "SSSSSSSSSSEESSEESESESSEESSEESESESESESSEESESESESESESSESEESESESSESEESSEESSEESESESESESSESEESSESESEESSESEESESSESEESESESESESSEESESESESESESESESESSEESESESESESESSEESSEESESSESEESSEESESSEESESESESESESSEESESESSEESESSESEESSEESESESESSEESSESEESESSESESESESEESSEESESESESESESESESESESESESESESESSEESESSEESSEESESESESSEESESESSEESESESSEESESESESESESESESESESESESESSESEESSEESESSEESESSEESSEESESSEESESESESESESESESESESSEESEEEESSSSSE"
         path = utils.convert_edge_to_grid_actions(
             searches.a_star_search(
-                self.graph_5, # <-fixed this typo
+                self.graph_5,
                 graph.Node(utils.Tile(4, 0, "@1")),
                 graph.Node(utils.Tile(201, 206, "@5"))
             )

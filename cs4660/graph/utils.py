@@ -47,6 +47,8 @@ def parse_grid_file(graph, file_path):
 
     f = open(file_path, 'r')
     lines = f.read().split('\r\n')[1:-2]
+    print(len(lines))
+    print(lines[0])
     lines = [l[1:-1] for l in lines]
     f.close()
 
