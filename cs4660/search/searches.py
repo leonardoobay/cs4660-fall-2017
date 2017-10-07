@@ -147,7 +147,6 @@ def a_star_search(graph, initial_node, dest_node):
                 came_from[next] = current
 
     n = dest_node
-    # import pdb; pdb.set_trace()
     path_list = [n]
     while came_from[n]:
         path_list.append(came_from[n])

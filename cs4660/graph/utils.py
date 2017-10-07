@@ -1,4 +1,5 @@
-# from graph import Node, Edge
+
+from graph import graph
 """
 utils package is for some quick utility methods
 
@@ -47,21 +48,17 @@ def parse_grid_file(graph, file_path):
 
     f = open(file_path, 'r')
     lines = f.read().split('\r\n')[1:-2]
-    print(len(lines))
-    print(lines[0])
     lines = [l[1:-1] for l in lines]
     f.close()
 
     rows = len(lines)
-    cols = len(lines[0])
+    cols = len(lines[]) #change here
     
     for row in range(rows):
         for col in range(0, cols, 2):
           symbol = lines[row][col:col+2]
           if symbol == "##" :
             continue
-          # if symbol[0] == "@":
-          #   import pdb; pdb.set_trace()
           tile = Tile(col/2, row, symbol)
           cur_node = Node(tile)
           graph.add_node(cur_node)
@@ -92,11 +89,7 @@ def convert_edge_to_grid_actions(edges):
     """
     path = ""
     
-    print("+++")
-    print(len(edges))
-    print(edges)
     for edge in edges:
-      print(edge)
       
       tile1 = edge.from_node.data
       tile2 = edge.to_node.data
