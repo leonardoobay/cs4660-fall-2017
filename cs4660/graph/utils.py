@@ -1,5 +1,7 @@
 from graph.graph import Node, Edge
 
+# not passing on python2
+
 """
 utils package is for some quick utility methods
 
