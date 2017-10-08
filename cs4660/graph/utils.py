@@ -1,4 +1,10 @@
-from graph.graph import Node, Edge
+try:
+  from graph.graph import Node, Edge
+except:
+  from graph import Node, Edge
+
+# from graph import Node
+# from graph import Edge
 
 # not passing on python2
 
