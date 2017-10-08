@@ -1,3 +1,4 @@
+from graph.graph import Node, Edge
 
 """
 utils package is for some quick utility methods
@@ -21,8 +22,15 @@ class Tile(object):
         if isinstance(other, self.__class__):
             return self.x == other.x and self.y == other.y and self.symbol == other.symbol
         return False
+
     def __ne__(self, other):
         return not self.__eq__(other)
+
+    def __gt__(self, other_node):
+        return self.__hash__() > other_node.__hash__()
+
+    def __lt__(self, other_node):
+        return self.__hash__() < other_node.__hash__()
 
     def __hash__(self):
         return hash(str(self.x) +"," + str(self.y) + self.symbol)
@@ -39,26 +47,26 @@ def parse_grid_file(graph, file_path):
     # TODO: read the filepaht line by line to construct nodes & edges
     def check_symbol(cnode, symbol, x, y):
       if symbol != "##":    
-        node = Node(Tile(x/2, y, tsymbol))
+        node = Node(Tile(int(x/2), y, tsymbol))
         edge = Edge(cnode, node, 1)
         graph.add_node(node)
         graph.add_edge(edge)
 
 
     f = open(file_path, 'r')
-    lines = f.read().split('\r\n')[1:-2]
+    lines = f.read().split('\n')[1:-2]
     lines = [l[1:-1] for l in lines]
     f.close()
 
     rows = len(lines)
-    cols = len(lines[0]) #change here
+    cols = len(lines[0])
     
     for row in range(rows):
         for col in range(0, cols, 2):
           symbol = lines[row][col:col+2]
           if symbol == "##" :
             continue
-          tile = Tile(col/2, row, symbol)
+          tile = Tile(int(col/2), row, symbol)
           cur_node = Node(tile)
           graph.add_node(cur_node)
 

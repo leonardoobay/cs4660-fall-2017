@@ -66,6 +66,13 @@ class Node(object):
 
     def __eq__(self, other_node):
         return self.data == other_node.data
+
+    def __gt__(self, other_node):
+        return self.data > other_node.data
+
+    def __lt__(self, other_node):
+        return self.data < other_node.data
+
     def __ne__(self, other):
         return not self.__eq__(other)
 
