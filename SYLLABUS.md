@@ -83,7 +83,7 @@ The schedule below is tentative and is subject to change.
 | 6  [09/30]         | [Heuristic search][6] |  |
 | 7  [10/07]         | [Adversarial search][7] |  |
 | 8  [10/14]         | [Monte Carlo Tree Search][8] | [Homework 2][11], Quiz 2 |
-| 9  [10/21]         | Concepts of Machine Learning, Jupyter, Numpy|  |
+| 9  [10/21]         | Concepts of Machine Learning, Jupyter, NumPy|  |
 | 10 [10/28]         | Decision Trees |  |
 | 11 [11/04]         | Logistic Regression|  |
 | 12 [11/11]         | Naive Bayes|  |
