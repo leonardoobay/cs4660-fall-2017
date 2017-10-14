@@ -16,8 +16,9 @@ Test with empty files.
 Attempt #1.
 """
 
-
+import json
 from math import sqrt
+
 # http lib import for Python 2 and 3: alternative 4
 try:
     from urllib.request import urlopen, Request
@@ -428,14 +429,24 @@ class ObjectOriented(object):
                 return edge
         return None
 
+        
+import json
+import codecs
+# http lib import for Python 2 and 3: alternative 4
+try:
+    from urllib.request import urlopen, Request
+except ImportError:
+    from urllib2 import urlopen, Request
+
+GET_STATE_URL = "http://192.241.218.106:9000/getState"
+STATE_TRANSITION_URL = "http://192.241.218.106:9000/state"
+
 def get_state(room_id):
     """
     get the room by its id and its neighbor
     """
     body = {'id': room_id}
     return __json_request(GET_STATE_URL, body)
-
-
 
 def transition_state(room_id, next_room_id):
     """
@@ -483,6 +494,13 @@ def BFS(src, dst):
     list.push(previous)
     while list.length > 0:
         aNode = list.pop()
+        
+        try:
+            temp = hashTable.get(aNode['id']) #visited already
+            continue
+        except:
+            pass
+            
         hashTable.set(aNode.data[0], aNode) # mark as visited   
 
         msg = transition_state(previous.data[0], aNode.data[0])
@@ -522,11 +540,117 @@ def BFS(src, dst):
         print ('Total hp: ' + str(finalNode.data[2]))
         #print ('Total hp: ' + str(hp))
 
+        
+def Dijkstra(src, dst): 
+    
+    print ('Dijkstra Path:')
+    
+    list = List()
+    hashTable = HashTable()
+    finalNode = None
+    found = False
+    
+    hp = 0
+    empty_room = get_state(src)
+    previous = Node([empty_room['id'], '', 0, empty_room['location']['name']])
+    list.push(previous)
+    
+    while list.length > 0:
+        #sort list      
+        for i in range(0, list.length):
+ 
+            key = list.memory[i]
+            j = i - 1
+            while j >= 0 and key.data[2] < list.memory[j].data[2] :
+                    list.memory[j + 1].data[2] < list.memory[j].data[2]
+                    j -= 1
+            list.memory[j+1] = key
+        
+        #get the (best hp)
+        aNode = list.pop()
+        
+        try:
+            temp = hashTable.get(aNode['id'])#visited already
+            continue
+        except:
+            pass
+                
+        hashTable.set(aNode.data[0], aNode) # mark as visited   
+
+        msg = transition_state(previous.data[0], aNode.data[0])
+        #print (msg)
+
+        hp = abs(msg['event']['effect'])
+        
+        if aNode.data[0] == dst:
+            finalNode = aNode
+            found = True
+            break
+        aRoom = get_state(aNode.data[0])
+        for neighbor in aRoom['neighbors']:
+            
+            try:
+                aNodeInHash = hashTable.get(neighbor['id'])
+                #choose better parent?
+                #aCost = cost(aRoom['location']['x'], aRoom['location']['y'], neighbor['location']['x'], neighbor['location']['y'])
+                
+                #print (aNode.data[2] + aCost)
+                #print (aNodeInHash.data[2])
+                #print 'abc';
+                #print 'abc';
+            except:
+                #aCost = cost(aRoom['location']['x'], aRoom['location']['y'], neighbor['location']['x'], neighbor['location']['y'])
+                
+                inList = False
+                foundNode = None
+                for i in range(0, list.length):
+                    if list.memory[i].data[0] == neighbor['id']:
+                        inList = True
+                        foundNode = list.memory[i]
+                        break
+                        
+                if inList == False:
+                    aNeighbor = Node([neighbor['id'], aNode.data[0], aNode.data[2] + hp, aRoom['location']['name']])
+                    list.push(aNeighbor)
+                else:
+                    if aNode.data[2] + hp > foundNode.data[2]:
+                        foundNode.data[2] = aNode.data[2] + hp
+                        foundNode.data[1] = aNode.data[0]
+                
+                
+        previous = aNode
+        #print (list.length)
+    if found == False:
+        print ('Not found')
+    else:
+        path = ''
+        current = aNode.data[0]
+        current_name = aNode.data[3]
+        while current != '':
+            parent = hashTable.get(current).data[1]
+            parent_name = hashTable.get(current).data[3]
+            if  parent == '':
+                break
+            path = (parent_name + "(" + parent + ")" + " : " + current_name + "(" + current + ")") + '\n' + path
+            current = parent
+            current_name = parent_name;
+            print (parent_name + "(" + parent + ")" + " : " + current_name + "(" + current + ")")
+        print (path)    
+        print ('Total hp: ' + str(finalNode.data[2]))
+        #print ('Total hp: ' + str(hp))
+    
+    pass
 if __name__ == "__main__":
     # Your code starts here
     empty_room = get_state('7f3dc077574c013d98b2de8f735058b4')
-    print(empty_room)
-    print(transition_state(empty_room['id'], empty_room['neighbors'][0]['id']))
-
-
-    #is this working? test test
+    #print(empty_room)
+    #print(transition_state(empty_room['id'], empty_room['neighbors'][0]['id']))
+    
+    src = '7f3dc077574c013d98b2de8f735058b4'
+    dst = 'f1f131f647621a4be7c71292e79613f9'
+    
+    BFS(src, dst)
+    
+    Dijkstra(src, dst)
+    
+    
