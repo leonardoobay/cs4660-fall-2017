@@ -88,7 +88,7 @@ The schedule below is tentative and is subject to change.
 | 11 [11/04]         | Logistic Regression|  |
 | 12 [11/11]         | Naive Bayes|  |
 | 13 [11/18]         | Classic Computer Vision Sampler|  |
-| 14 [11/25]         | Image Classification using Histogram of Oriented Gradients|  |
+| 14 [11/25]         | Pedestrian detection using SVM + HOG|  |
 | 15 [12/02]         | Object Detection|  |
 | Final [12/09]      | Computer Vision Project Presentations|  |
 
