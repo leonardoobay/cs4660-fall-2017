@@ -64,3 +64,6 @@ if __name__ == "__main__":
     empty_room = get_state('7f3dc077574c013d98b2de8f735058b4')
     print(empty_room)
     print(transition_state(empty_room['id'], empty_room['neighbors'][0]['id']))
+
+
+    #is this working? test test
