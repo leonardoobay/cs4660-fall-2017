@@ -492,8 +492,11 @@ def BFS(src, dst):
     empty_room = get_state(src)
     previous = Node([empty_room['id'], '', 0, empty_room['location']['name']])
     list.push(previous)
+    
+    index = 0
     while list.length > 0:
-        aNode = list.pop()
+        aNode = list.memory[index]
+        index = index + 1
         
         try:
             temp = hashTable.get(aNode['id']) #visited already
@@ -519,7 +522,7 @@ def BFS(src, dst):
             except:
                 #aCost = cost(aRoom['location']['x'], aRoom['location']['y'], neighbor['location']['x'], neighbor['location']['y'])
                 aNeighbor = Node([neighbor['id'], aNode.data[0], aNode.data[2] + hp, aRoom['location']['name']])
-                list.push(aNeighbor)
+                list.unshift(aNeighbor)
         previous = aNode
         #print (list.length)
     if found == False:
@@ -562,12 +565,18 @@ def Dijkstra(src, dst):
             key = list.memory[i]
             j = i - 1
             while j >= 0 and key.data[2] < list.memory[j].data[2] :
-                    list.memory[j + 1].data[2] < list.memory[j].data[2]
+                    list.memory[j + 1]= list.memory[j]
                     j -= 1
             list.memory[j+1] = key
+            
+        #print ('----')
+        #for i in range(0, list.length):
+        #   print list.memory[i].data[2]
+        #print ('+++')
         
         #get the (best hp)
         aNode = list.pop()
+        #print (aNode.data[2])
         
         try:
             temp = hashTable.get(aNode['id'])#visited already
@@ -634,7 +643,7 @@ def Dijkstra(src, dst):
             path = (parent_name + "(" + parent + ")" + " : " + current_name + "(" + current + ")") + '\n' + path
             current = parent
             current_name = parent_name;
-            print (parent_name + "(" + parent + ")" + " : " + current_name + "(" + current + ")")
+            #print (parent_name + "(" + parent + ")" + " : " + current_name + "(" + current + ")")
         print (path)    
         print ('Total hp: ' + str(finalNode.data[2]))
         #print ('Total hp: ' + str(hp))
