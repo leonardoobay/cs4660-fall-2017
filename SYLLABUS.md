@@ -39,10 +39,11 @@
 
 ## Grade Allocation
 
-1. Quizzes (4) 40 pts
-2. Homework (4) 40 pts
-3. Course Project 20 pts
-4. Attendance 5 pts
+1. Quizzes/Labs 40 pts
+2. Homework (6) 40 pts
+3. Course Project 1 20 pts
+4. Course Project 2 20 pts
+5. Attendance 5 pts
 
 **Final Project** Homework assignments culminate in a final project: a complete application/game that utilizes the AI theories. **Successful completion of the course project is a requirement for passing this course.**
 
